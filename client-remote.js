@@ -13,9 +13,9 @@ client.on('data', (data) => {
     if (data === 'DEC') client.destroy();
     else if (data === 'ACK') {
         task_num++;
-        if (task_num === 1) client.write('COPY work\\f1.txt work\\f2.txt');
-        else if (task_num === 2) client.write('ENCODE work\\f2.txt work\\f3.txt 111');
-        else if (task_num === 3) client.write('DECODE work\\f3.txt work\\f4.txt 111');
+        if (task_num === 1) client.write('COPY work\\text_1.txt work\\text_2.txt');
+        else if (task_num === 2) client.write('ENCODE work\\text_2.txt work\\text_3.txt 111');
+        else if (task_num === 3) client.write('DECODE work\\text_3.txt work\\text_4.txt 111');
         else client.destroy();
     } else console.log(`!!! UNKNOWN COMMAND: ${data}`);
 });
